@@ -5,7 +5,9 @@
     tagName: 'ul',
     className: 'allPeople',
 
-    events: {},
+    events: {
+      'click #submitLocation' : 'submitLocation'
+    },
 
     template: _.template($('#userTemp').html()),
 
@@ -32,9 +34,19 @@
 
       this.$el.append(this.template(App.user.toJSON()));
 
+      App.loadMap(); //load map from main.js
+
       return this;
 
+    },
+
+    submitLocation: function(){
+      console.log(App.userMarker.position);
+      
+
     }
+
+
 
 
   });

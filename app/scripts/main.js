@@ -14,36 +14,35 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   });
 
-  var map;
-  function initialize(location) {
+App.userMarker = null;
 
-    console.log(location);
+App.loadMap = function() {
+  //Google Maps API Shenanigans
+    var map;
 
-    var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+      navigator.geolocation.getCurrentPosition(function (location) {
+        console.log(location);
 
-    var mapOptions = {
-      center: currentLocation,
-      zoom: 12,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+        //get the user's current location
+        var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
-    map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+        var mapOptions = {
+          center: currentLocation,
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
-    var marker = new google.maps.Marker({
-      position: currentLocation,
-      map: map
-    });
-}
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-  $(document).ready(function () {
-
-    navigator.geolocation.getCurrentPosition(initialize);
-
-  });
+        App.userMarker = new google.maps.Marker({
+          position: currentLocation,
+          map: map,
+          draggable:true
+        });
+      })
+};
 
 
-  // Log Out
+  // Log Out Button
   $('#logOut').on('click', function (e) {
     e.preventDefault();
     Parse.User.logOut();
@@ -64,7 +63,6 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
     $('#welcomeText').html(currentUser);
   };
   App.updateUser();
-
 
 
 
