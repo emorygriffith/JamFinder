@@ -16,11 +16,10 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
 App.userMarker = null;
 
-App.loadMap = function() {
+App.loadMap = function(position) {
   //Google Maps API Shenanigans
     var map;
-
-      navigator.geolocation.getCurrentPosition(function (location) {
+    var createMap = function (location) {
         console.log(location);
 
         //get the user's current location
@@ -38,7 +37,14 @@ App.loadMap = function() {
           map: map,
           draggable:true
         });
-      })
+      };
+
+      if (position == null) {
+        navigator.geolocation.getCurrentPosition(createMap);
+      } else {
+        createMap(position);
+      }
+
 };
 
 
@@ -49,6 +55,7 @@ App.loadMap = function() {
     App.updateUser();
     App.router.navigate('login', {trigger: true});
   });
+
 
 
   // Update User

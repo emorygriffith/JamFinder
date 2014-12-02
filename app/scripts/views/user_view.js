@@ -34,7 +34,7 @@
 
       this.$el.append(this.template(App.user.toJSON()));
 
-      App.loadMap(); //load map from main.js
+      App.loadMap(App.user.get('location')); //load map from main.js
 
       return this;
 
@@ -42,7 +42,19 @@
 
     submitLocation: function(){
       console.log(App.userMarker.position);
-      
+
+      var location = {
+        coords: {
+          latitude: App.userMarker.position.k,
+          longitude: App.userMarker.position.B
+        }
+      }
+
+      App.user.set('location', location);
+
+      App.user.save();
+
+
 
     }
 
