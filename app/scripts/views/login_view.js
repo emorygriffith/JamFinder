@@ -1,7 +1,6 @@
 (function() {
 
   App.Views.Login = Parse.View.extend({
-
     tagName: 'ul',
     className: 'allPeople',
 
@@ -13,7 +12,6 @@
 
     initialize: function(options) {
       this.options = options;
-
 
       $('#bandMates').html(this.$el);
 
@@ -40,9 +38,10 @@
 
       Parse.User.logIn(username, password, {
         success: function (user) {
-          // App.updateUser();
-          App.router.navigate('user', {trigger: true});
+          App.updateUser();
+          App.router.navigate('#/user', {trigger: true});
           console.log(username + ' is logged in');
+          console.log(user);
         },
         error: function (user, error) {
           alert("Error: " + error.message);

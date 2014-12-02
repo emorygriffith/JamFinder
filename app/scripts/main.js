@@ -14,5 +14,31 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   });
 
+  // Log Out
+  $('#logOut').on('click', function (e) {
+    e.preventDefault();
+    Parse.User.logOut();
+    App.updateUser();
+    App.router.navigate('login', {trigger: true});
+  });
+
+
+  // Update User
+  App.updateUser = function (){
+    App.user = Parse.User.current();
+    var currentUser;
+    if (App.user == null){
+      currentUser = '';
+    } else {
+      currentUser = 'Welcome ' + App.user.attributes.username;
+    }
+    $('#welcomeText').html(currentUser);
+  };
+  App.updateUser();
+
+
+
+
+
 
 }());

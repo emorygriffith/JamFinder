@@ -38,7 +38,11 @@
       var person = new Parse.User({
 
         username: $('#username').val(),
-        password: $('#password').val()
+        password: $('#password').val(),
+        name: $('#name').val(),
+        instrument: $('#instrument').val(),
+        style: $('#style').val(),
+        commitment: $('#commitment').val()        
       });
 
       console.log(person);

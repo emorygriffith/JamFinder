@@ -24,9 +24,10 @@
   <body>
 
     <div class="hero-unit">
+      <button id="logOut">Log Out</button>
 
       <h1>Jam Finder</h1>
-      <a href="#/login">Log In</a> | <a href="#/signup">Sign Up</a>
+      <a href="#/login">Log In</a> | <a href="#/signup">Sign Up</a> | <a href="#/user">My Profile</a>
       <div id="bandMates"></div>
 
     </div>
@@ -44,12 +45,27 @@
       <form id="signUp">
         <input id="username" type="text" placeholder="Enter Username" />
         <input id="password" type="password" placeholder="Enter Password" />
+        <br>
+        <br>
+        <input id="name" type="text" placeholder="Enter Name" />
+        <br>
+        <input id="instrument" type="text" placeholder="Enter Instrument" />
+        <br>
+        <input id="style" type="text" placeholder="Enter Style" />
+        <br>
+        <input id="commitment" type="text" placeholder="Enter Commitment" />
+        <br><br>
         <button>Sign Up</button>
       </form>
     </script>
 
     <script type="text/template" id="userTemp">
-      <h3>This is the user view!</h3>
+    <li id="<%= objectId %>">
+        <h3>Welcome <%= name %>!</h3>
+        <p>Instrument: <%= instrument %></p>
+        <p>Style: <%= style %></p>
+        <p>Commitment Level: <%= commitment %></p>
+    </li>
     </script>
 
     <!-- build:js scripts/vendor.js -->

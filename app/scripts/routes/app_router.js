@@ -4,7 +4,8 @@
 
     routes: {
       'login': 'userLogin',
-      'signup': 'userSignup'
+      'signup': 'userSignup',
+      'user': 'userPage'
     },
 
     userLogin: function() {
@@ -14,6 +15,10 @@
 
     userSignup: function() {
       new App.Views.Signup();
+    },
+
+    userPage: function() {
+      new App.Views.User( { collection: App.people });
     }
 
 
