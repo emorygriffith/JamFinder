@@ -14,6 +14,35 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   });
 
+  var map;
+  function initialize(location) {
+
+    console.log(location);
+
+    var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+
+    var mapOptions = {
+      center: currentLocation,
+      zoom: 12,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: currentLocation,
+      map: map
+    });
+}
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  $(document).ready(function () {
+
+    navigator.geolocation.getCurrentPosition(initialize);
+
+  });
+
+
   // Log Out
   $('#logOut').on('click', function (e) {
     e.preventDefault();

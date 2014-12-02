@@ -20,32 +20,8 @@
 
       this.render();
 
-      // this.peopleQuery();
 
     },
-
-    // peopleQuery: function() {
-    //
-    //   var self = this;
-    //
-    //   var thisUser = new Parse.Query(Parse.User);
-    //
-    //   thisUser.equalTo('name', App.user.get('name'));
-    //
-    //   thisUser.find({
-    //     success: function (results) {
-    //       console.log('results is: ' + results);
-    //       self.collection = results;
-    //       console.log('collection is now: ' + self.collection);
-    //       self.render();
-    //     },
-    //
-    //     error: function(error, user){
-    //       console.log('Error: ' + error.message);
-    //     }
-    //   });
-    //
-    // },
 
 
     render: function() {
@@ -55,11 +31,6 @@
       this.$el.empty();
 
       this.$el.append(this.template(App.user.toJSON()));
-
-      // _.each(self.collection, function(p) {
-      //   var rendered = self.template(p.toJSON());
-      //   self.$el.append(self.template(p.toJSON()));
-      // });
 
       return this;
 
