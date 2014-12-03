@@ -6,7 +6,8 @@
       'login': 'userLogin',
       'signup': 'userSignup',
       'user': 'userPage',
-      'home': 'homePage'
+      'home': 'homePage',
+      'landing': 'landingPage'
     },
 
     userLogin: function() {
@@ -24,6 +25,10 @@
 
     homePage: function() {
       new App.Views.Home( { collection: App.people });
+    },
+
+    landingPage: function() {
+      new App.Views.Landing();
     }
 
 
