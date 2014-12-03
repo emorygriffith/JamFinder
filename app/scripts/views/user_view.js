@@ -14,11 +14,7 @@
     initialize: function(options) {
       this.options = options;
 
-      this.collection.off();
-      this.collection.on('sync', this.postQuery, this);
-
-
-      $('#bandMates').append(this.$el);
+      $('#bandMates').html(this.$el);
 
       this.render();
 
