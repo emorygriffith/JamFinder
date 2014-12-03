@@ -17,11 +17,9 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 App.userMarker = null;
 
 App.loadMap = function(position) {
-  //Google Maps API Shenanigans
     var map;
+    //Google Maps API Shenanigans
     var createMap = function (location) {
-        // console.log(location);
-
         //get the user's current location
         var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
@@ -30,23 +28,23 @@ App.loadMap = function(position) {
           zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+        App.map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
         App.userMarker = new google.maps.Marker({
           position: currentLocation,
-          map: map,
+          map: App.map,
           draggable:true
         });
       };
 
-      if (position == null) {
-        navigator.geolocation.getCurrentPosition(createMap);
-      } else {
-        createMap(position);
-      }
-
+    if (position == null) {
+      navigator.geolocation.getCurrentPosition(createMap);
+    } else {
+      createMap(position, App.map);
+    }
+    //console.log(map);
+    return map;
 };
-
 
 
   // Log Out Button

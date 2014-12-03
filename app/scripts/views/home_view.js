@@ -28,15 +28,25 @@
 
       this.$el.append(this.template(App.user.toJSON()));
 
+      var profileMap = App.loadMap();
 
       //iterate through users and get their location
-      _.each(App.people.models, function(user){
-          var storedLocation = user.get('location');
+      console.log(App.map);
+      setTimeout(function () {
+        console.log(App.map);
+        _.each(App.people.models, function(user){
+            var location = user.get('location');
+            var latLong = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
-          App.loadMap(storedLocation); //load map from main.js
-          console.log(storedLocation.coords);
-          console.log(storedLocation.coords.latitude, storedLocation.coords.longitude);
-      });
+            new google.maps.Marker({
+              position: latLong,
+              map: App.map
+            });
+
+             //load map from main.js
+            console.log(latLong);
+        });
+      }, 5000);
 
       return this;
 
