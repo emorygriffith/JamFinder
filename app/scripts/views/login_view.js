@@ -41,7 +41,7 @@
           App.updateUser();
           App.router.navigate('#/user', {trigger: true});
           console.log(username + ' is logged in');
-          console.log(user);
+          // console.log(user);
         },
         error: function (user, error) {
           alert("Error: " + error.message);

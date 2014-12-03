@@ -20,7 +20,7 @@ App.loadMap = function(position) {
   //Google Maps API Shenanigans
     var map;
     var createMap = function (location) {
-        console.log(location);
+        // console.log(location);
 
         //get the user's current location
         var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
@@ -46,6 +46,7 @@ App.loadMap = function(position) {
       }
 
 };
+
 
 
   // Log Out Button

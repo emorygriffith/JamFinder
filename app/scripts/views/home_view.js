@@ -26,10 +26,17 @@
 
       this.$el.empty();
 
-      this.$el.html(this.template(App.user.toJSON()));
+      this.$el.append(this.template(App.user.toJSON()));
 
-      App.loadMap(App.user.get('location')); //load map from main.js
 
+      //iterate through users and get their location
+      _.each(App.people.models, function(user){
+          var storedLocation = user.get('location');
+
+          App.loadMap(storedLocation); //load map from main.js
+          console.log(storedLocation.coords);
+          console.log(storedLocation.coords.latitude, storedLocation.coords.longitude);
+      });
 
       return this;
 
