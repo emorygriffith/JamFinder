@@ -33,10 +33,13 @@
         <a href="#/signup"><button>Sign Up</button></a>
         <button id="logOut">Log Out</button>
         <a href="#/user"><button>My Profile</button></a>
+        <a href="#/addJam"><button>Add Jam</button></a>
+        <a href="#/landing"><button>Landing Page</button></a>
+        <a href="#/otherProfile"><button>Other Profile View</button></a>
       </div>
 
       <div id="bandMates"></div>
-
+      <div id="separateDiv"></div>
     </div>
 
 
@@ -81,12 +84,25 @@
     </script>
 
     <script type="text/template" id="homeTemp">
-      <div id="<%= objectId %>">
-        <h3>Welcome, <%= name %>!!</h3>
-        <div id="map-canvas"></div>
+      <div id="map-canvas"></div>
 
+    </script>
+
+    <script type="text/template" id="addTemp">
+      <div id="<%= objectId %>" class="createjamform">
+        <h3>Create a Jam</h3>
+        <form id="createJam">
+          <input id="title" type="text" placeholder="Title" /> <br>
+          <input id="host" type="text" placeholder="Host" /> <br>
+          <input id="location" type="text" placeholder="Location" /> <br>
+          <input id="members" type="text" placeholder="Members" /> <br>
+          <input id="date" type="date" placeholder="Date" /> <br>
+          Public <input id="public" type="checkbox"/> <br>
+          <button>Add Jam</button>
+        </form>
       </div>
     </script>
+
 
     <script type="text/template" id="landingTemp">
       <li>
@@ -94,7 +110,26 @@
       </li>
     </script>
 
+    <script type="text/template" id="otherProfile">
+      <li>
+        <h3>other profile view</h3>
+      </li>
+    </script>
 
+
+
+<!--     <script type="text/template" id="findJams">
+  <li>
+    <h3>Jam Finder view</h3>
+  </li>
+  <div class="jamcontainer">
+<form id="findajam">
+<input id="username" type="text" placeholder="Enter Username" />
+<input id="password" type="password" placeholder="Enter Password" />
+<button>Find!</button>
+</form>
+  </div>
+</script> -->
 
 
 
@@ -121,11 +156,14 @@
         <!-- build:js scripts/main.js -->
         <script src="scripts/models/person_model.js"></script>
         <script src="scripts/collections/people_collection.js"></script>
+        <script src="scripts/collections/jam_collection.js"></script>
         <script src="scripts/views/home_view.js"></script>
         <script src="scripts/views/login_view.js"></script>
         <script src="scripts/views/signup_view.js"></script>
         <script src="scripts/views/user_view.js"></script>
         <script src="scripts/views/landing_view.js"></script>
+        <script src="scripts/views/otherprofile_view.js"></script>
+        <script src="scripts/views/add_view.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/main.js"></script>
 

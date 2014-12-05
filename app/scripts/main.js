@@ -14,6 +14,10 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   });
 
+  // App.jams = new App.Collections.Jams();
+
+
+
 App.userMarker = null;
 
 App.loadMap = function(position) {
@@ -25,9 +29,10 @@ App.loadMap = function(position) {
 
         var mapOptions = {
           center: currentLocation,
-          zoom: 12,
+          zoom: 8,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         App.map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
         App.userMarker = new google.maps.Marker({

@@ -1,18 +1,15 @@
 (function() {
 
-  App.Views.Landing = Parse.View.extend({
+  App.Views.OtherProfile = Parse.View.extend({
 
     tagName: 'ul',
-    className: 'landing',
+    className: 'otherProfile',
 
     events: {},
 
-    template: $('#landingTemp').html(),
-
-
+    template: $('#otherProfile').html(),
 
     initialize: function() {
-
       $('#bandMates').html(this.$el);
 
       this.$el.html(this.template);
@@ -20,6 +17,8 @@
       var self = this;
 
       return this;
+
+
     },
 
 
@@ -32,9 +31,6 @@
       return this;
 
     },
-
-
-
 
 
 

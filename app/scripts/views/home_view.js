@@ -5,7 +5,9 @@
     tagName: 'ul',
     className: 'allPeople',
 
-    events: {},
+    events: {
+      'submit #createJam': 'addingJam'
+    },
 
     template: _.template($('#homeTemp').html()),
 
@@ -30,13 +32,16 @@
 
       var profileMap = App.loadMap();
 
+
       //iterate through users and get their location
-      console.log(App.map);
       setTimeout(function () {
-        console.log(App.map);
+
         _.each(App.people.models, function(user){
             var location = user.get('location');
+
             var latLong = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+            console.log(latLong);
+
 
             new google.maps.Marker({
               position: latLong,
@@ -48,9 +53,35 @@
         });
       }, 5000);
 
+
+
       return this;
 
     },
+
+    addingJam: function (e) {
+      e.preventDefault();
+
+      var j = new Parse.Models.Jam({
+        title: $('#title').val(),
+        host: $('#host').val(),
+        location: $('#location').val(),
+        members: $('#members').val(),
+        date: $('#date').val(),
+        public: $('#public').val()
+      });
+
+      console.log(jam);
+
+
+      j.save(null, {
+        success: function() {
+          App.jams.add(j);
+        }
+      });
+
+    }
+
 
 
 
