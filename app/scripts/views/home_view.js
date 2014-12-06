@@ -83,17 +83,24 @@
 
             var latLong = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
+            var contentString = user.get('firstname') + ',  ' + user.get('instrument');
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
 
 
-            new google.maps.Marker({
+            var marker = new google.maps.Marker({
               position: latLong,
               map: App.map
             });
 
-             //load map from main.js
-            // console.log(latLong);
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(App.map,marker);
+            });
+
         });
-      }, 4000);
+      }, 5000);
 
 
 

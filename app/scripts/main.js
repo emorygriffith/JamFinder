@@ -42,11 +42,15 @@ App.loadMap = function(position) {
 
         App.map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
+
         App.userMarker = new google.maps.Marker({
           position: currentLocation,
           map: App.map,
-          draggable:true
+          draggable:true,
+          title: 'Title Here'
         });
+
+
       };
 
     if (position == null) {
