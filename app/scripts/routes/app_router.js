@@ -9,7 +9,8 @@
       'home': 'homePage',
       'landing': 'landingPage',
       'otherProfile': 'otherProfile',
-      'addJam': 'addJam'
+      'addJam': 'addJam',
+      'search': 'search'
     },
 
     userLogin: function() {
@@ -39,7 +40,11 @@
     },
 
     addJam: function() {
-      new App.Views.Add();
+      new App.Views.Add({ collection: App.jams});
+    },
+
+    search: function() {
+      new App.Views.Search();
     }
 
 

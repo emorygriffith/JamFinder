@@ -39,10 +39,11 @@
 
         username: $('#username').val(),
         password: $('#password').val(),
-        name: $('#name').val(),
+        firstname: $('#firstname').val(),
+        lastname: $('#lastname').val(),
         instrument: $('#instrument').val(),
         style: $('#style').val(),
-        commitment: $('#commitment').val()        
+        commitment: $('#commitment').val()
       });
 
       console.log(person);

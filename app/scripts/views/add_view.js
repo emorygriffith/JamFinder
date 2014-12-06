@@ -6,7 +6,7 @@
     className: 'allPeople',
 
     events: {
-      // 'submit #createJam': 'addingJam'
+      'submit #createJam': 'addingJam'
     },
 
     template: $('#addTemp').html(),
@@ -34,28 +34,28 @@
 
     },
 
-    // addingJam: function (e) {
-    //   e.preventDefault();
-    //
-    //   var j = new Parse.Models.Jam({
-    //     title: $('#title').val(),
-    //     host: $('#host').val(),
-    //     location: $('#location').val(),
-    //     members: $('#members').val(),
-    //     date: $('#date').val(),
-    //     public: $('#public').val()
-    //   });
-    //
-    //   console.log(jam);
-    //
-    //
-    //   j.save(null, {
-    //     success: function() {
-    //       App.jams.add(j);
-    //     }
-    //   });
-    //
-    // }
+    addingJam: function (e) {
+      e.preventDefault();
+
+      var j = new App.Models.Jam({
+        title: $('#title').val(),
+        host: $('#host').val(),
+        location: $('#location').val(),
+        members: $('#members').val(),
+        date: $('#date').val(),
+        public: $('#public').val()
+      });
+
+      console.log(j);
+
+
+      j.save(null, {
+        success: function() {
+          App.jams.add(j);
+        }
+      });
+
+    }
 
 
 

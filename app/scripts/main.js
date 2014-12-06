@@ -4,6 +4,7 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   //create a new instance of our collection
   App.people = new App.Collections.People();
+  App.jams = new App.Collections.Jams();
 
   //fetch server-side posts
   App.people.fetch().done(function() {
@@ -14,7 +15,13 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
 
   });
 
-  // App.jams = new App.Collections.Jams();
+  App.jams.fetch().done(function() {
+
+    App.router = new App.Routers.AppRouter();
+
+  });
+
+
 
 
 

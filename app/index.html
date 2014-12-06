@@ -36,6 +36,7 @@
         <a href="#/addJam"><button>Add Jam</button></a>
         <a href="#/landing"><button>Landing Page</button></a>
         <a href="#/otherProfile"><button>Other Profile View</button></a>
+        <a href="#/search"><button>Search</button></a>
       </div>
 
       <div id="bandMates"></div>
@@ -53,21 +54,66 @@
 
     <script type="text/template" id="signupForm">
       <form id="signUp">
-        <input id="username" type="text" placeholder="Enter Username" />
-        <input id="password" type="password" placeholder="Enter Password" />
+        <h2>Create an Account</h2>
+          <input id="username" type="text" placeholder="Enter Username" />
+          <input id="password" type="password" placeholder="Enter Password" />
         <br>
         <br>
-        <input id="name" type="text" placeholder="Enter Name" />
+
+        Name: <input id="firstname" type="text" placeholder="First" /> <input id="lastname" type="text" placeholder="Last" />
         <br>
-        <input id="instrument" type="text" placeholder="Enter Instrument" />
+
+        Instrument: <select name="instrument" id="instrument">
+                      <option value="guitar">Guitar</option>
+                      <option value="bass">Bass</option>
+                      <option value="drums">Drums</option>
+                      <option value="keyboard">Keyboard</option>
+                      <option value="other">Other</option>
+                    </select>
         <br>
-        <input id="style" type="text" placeholder="Enter Style" />
+        Style:      <select name="style" id="style">
+                      <option value="folk">Folk</option>
+                      <option value="blues">Blues</option>
+                      <option value="jazz">Jazz</option>
+                      <option value="rock">Rock</option>
+                      <option value="alternative">Alternative</option>
+                      <option value="metal">Metal</option>
+                      <option value="hiphop">Hip Hop</option>
+                    </select>
         <br>
-        <input id="commitment" type="text" placeholder="Enter Commitment" />
+
+        I want to play:     <select name="commitment" id="commitment">
+                              <option value="At a one time jam session">At a one time jam session</option>
+                              <option value="Every Few Months">Every Few Months</option>
+                              <option value="Once A Month">Once A Month</option>
+                              <option value="Weekly">Weekly</option>
+                              <option value="All The Time">All The Time</option>
+                            </select>
+
+
         <br><br>
         <button>Sign Up</button>
       </form>
     </script>
+
+<!--
+<script type="text/template" id="signupForm">
+<form id="signUp">
+<input id="username" type="text" placeholder="Enter Username" />
+<input id="password" type="password" placeholder="Enter Password" />
+<br>
+<br>
+<input id="name" type="text" placeholder="Enter Name" />
+<br>
+<input id="instrument" type="text" placeholder="Enter Instrument" />
+<br>
+<input id="style" type="text" placeholder="Enter Style" />
+<br>
+<input id="commitment" type="text" placeholder="Enter Commitment" />
+<br><br>
+<button>Sign Up</button>
+</form>
+</script> -->
 
     <script type="text/template" id="userTemp">
     <div id="<%= objectId %>">
@@ -85,8 +131,13 @@
 
     <script type="text/template" id="homeTemp">
       <div id="map-canvas"></div>
-
     </script>
+
+  <script type="text/template" id="jamsTemplate">
+    <li id="<%= objectId %>">  <%= title %> </li>
+  </script>
+
+
 
     <script type="text/template" id="addTemp">
       <div id="<%= objectId %>" class="createjamform">
@@ -116,20 +167,22 @@
       </li>
     </script>
 
+    <script type="text/template" id="searchTemp">
+      <li> Find a musician!</li>
+      <form id="findMusician">
+      <input id="style" type="text" placeholder="Style" /> <br>
+      <input id="instrument" type="text" placeholder="Instrument" /> <br>
+      <input id="location" type="text" placeholder="Location" /> <br>
+      <input id="commitment" type="text" placeholder="Commitment" /> <br>
+      <select name="choices" id="choices1">
+        <option value="1">stuff</option>
+        <option value="2">more stuff</option>
+      </select>
 
 
-<!--     <script type="text/template" id="findJams">
-  <li>
-    <h3>Jam Finder view</h3>
-  </li>
-  <div class="jamcontainer">
-<form id="findajam">
-<input id="username" type="text" placeholder="Enter Username" />
-<input id="password" type="password" placeholder="Enter Password" />
-<button>Find!</button>
-</form>
-  </div>
-</script> -->
+      <button>Search</button>
+
+    </script>
 
 
 
@@ -155,6 +208,7 @@
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/models/person_model.js"></script>
+        <script src="scripts/models/jam_model.js"></script>
         <script src="scripts/collections/people_collection.js"></script>
         <script src="scripts/collections/jam_collection.js"></script>
         <script src="scripts/views/home_view.js"></script>
@@ -164,6 +218,7 @@
         <script src="scripts/views/landing_view.js"></script>
         <script src="scripts/views/otherprofile_view.js"></script>
         <script src="scripts/views/add_view.js"></script>
+        <script src="scripts/views/search_view.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/main.js"></script>
 

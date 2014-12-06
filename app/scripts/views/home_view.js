@@ -6,18 +6,54 @@
     className: 'allPeople',
 
     events: {
-      'submit #createJam': 'addingJam'
+
     },
 
     template: _.template($('#homeTemp').html()),
+    jamsTemplate: _.template($('#jamsTemplate').html()),
 
     initialize: function(options) {
       this.options = options;
 
+      this.collection.off();
+      this.collection.on('sync', this.jamQuery, this);
+
+
+
+
+      this.jamQuery();
+      this.render();
 
       $('#bandMates').html(this.$el);
 
-      this.render();
+
+    },
+
+    jamQuery: function() {
+
+
+      var self = this;
+
+      var all_jams = new Parse.Query(App.Models.Jam);
+
+
+      all_jams.find({
+        success: function (results) {
+          self.collection = results;
+
+          console.log(results);
+
+          _.each(results, function(p) {
+              console.log(p.attributes.title);
+              self.$el.append(self.jamsTemplate(p.toJSON()));
+
+          });
+
+        }
+      });
+
+
+
 
 
     },
@@ -26,9 +62,15 @@
 
       var self = this;
 
-      this.$el.empty();
+
+
+
 
       this.$el.append(this.template(App.user.toJSON()));
+
+
+
+
 
       var profileMap = App.loadMap();
 
@@ -40,7 +82,7 @@
             var location = user.get('location');
 
             var latLong = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
-            console.log(latLong);
+
 
 
             new google.maps.Marker({
@@ -49,39 +91,17 @@
             });
 
              //load map from main.js
-            console.log(latLong);
+            // console.log(latLong);
         });
-      }, 5000);
+      }, 4000);
+
+
 
 
 
       return this;
 
     },
-
-    addingJam: function (e) {
-      e.preventDefault();
-
-      var j = new Parse.Models.Jam({
-        title: $('#title').val(),
-        host: $('#host').val(),
-        location: $('#location').val(),
-        members: $('#members').val(),
-        date: $('#date').val(),
-        public: $('#public').val()
-      });
-
-      console.log(jam);
-
-
-      j.save(null, {
-        success: function() {
-          App.jams.add(j);
-        }
-      });
-
-    }
-
 
 
 
