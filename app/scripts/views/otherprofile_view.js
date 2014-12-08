@@ -7,12 +7,17 @@
 
     events: {},
 
-    template: $('#otherProfile').html(),
+    template: _.template($('#otherProfile').html()),
 
-    initialize: function() {
+    initialize: function(options) {
+      console.log(options);
+
+
+      this.options= options;
       $('#bandMates').html(this.$el);
 
-      this.$el.html(this.template);
+      this.render();
+
 
       var self = this;
 
@@ -24,7 +29,8 @@
 
     render: function() {
 
-      this.$el.html(this.template);
+      this.$el.append(this.template(this.options.person.toJSON()));
+
 
       var self = this;
 

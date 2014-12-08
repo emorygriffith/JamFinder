@@ -84,9 +84,10 @@
             var latLong = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
             var contentString = user.get('firstname') + ',  ' + user.get('instrument');
+            var userLink = '/#/otherProfile/'+user.id;
 
             var infowindow = new google.maps.InfoWindow({
-              content: contentString
+              content: '<a href="' + userLink + '">' + contentString + '</a>'
             });
 
 
@@ -96,7 +97,7 @@
             });
 
             google.maps.event.addListener(marker, 'click', function() {
-              infowindow.open(App.map,marker);
+              infowindow.open(App.map, marker);
             });
 
         });

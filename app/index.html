@@ -99,7 +99,7 @@
 
     <script type="text/template" id="userTemp">
     <div id="<%= objectId %>">
-        <h3>Welcome <%= name %>!</h3>
+        <h3>Welcome <%= firstname %>!</h3>
         <p>Instrument: <%= instrument %></p>
         <p>Style: <%= style %></p>
         <p>Commitment Level: <%= commitment %></p>
@@ -117,8 +117,26 @@
     </script>
 
   <script type="text/template" id="jamsTemplate">
-    <li id="<%= objectId %>">  <%= title %> </li>
+
+  <li id="<%= objectId %>">
+    <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
+    Host: <%= host %> <br>
+    Location: <%= location %>
+    </li>
   </script>
+
+
+  <script type="text/template" id="singlejamTemp">
+    <div id="<%= objectId %>">
+      <h3 class="jumbo"><%= title %></h3><br>
+      <span>Host: <%= host %> </span><br>
+      <span>Location: <%= location %></span><br>
+      <span><%= description %></span>
+    </div>
+
+
+  </script>
+
 
 
 
@@ -130,6 +148,7 @@
           <input id="host" type="text" placeholder="Host" /> <br>
           <input id="location" type="text" placeholder="Location" /> <br>
           <input id="members" type="text" placeholder="Members" /> <br>
+          <input id="description" type="text" placeholder="Description" /> <br>
           <input id="date" type="date" placeholder="Date" /> <br>
           Public <input id="public" type="checkbox"/> <br>
           <button>Add Jam</button>
@@ -145,26 +164,47 @@
     </script>
 
     <script type="text/template" id="otherProfile">
-      <li>
-        <h3>other profile view</h3>
+      <li id="<%= objectId %>">
+        <h3><%= firstname %></h3>
       </li>
     </script>
 
     <script type="text/template" id="searchTemp">
-      <li> Find a musician!</li>
+      <h3> Find a musician!</h3>
       <form id="findMusician">
-      <input id="style" type="text" placeholder="Style" /> <br>
-      <input id="instrument" type="text" placeholder="Instrument" /> <br>
-      <input id="location" type="text" placeholder="Location" /> <br>
-      <input id="commitment" type="text" placeholder="Commitment" /> <br>
-      <select name="choices" id="choices1">
-        <option value="1">stuff</option>
-        <option value="2">more stuff</option>
-      </select>
+      Style:      <select name="style" id="style">
+                    <option value="folk">Folk</option>
+                    <option value="blues">Blues</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="rock">Rock</option>
+                    <option value="alternative">Alternative</option>
+                    <option value="metal">Metal</option>
+                    <option value="hiphop">Hip Hop</option>
+                  </select>
+      <br>
+
+      Instrument: <select name="instrument" id="instrument">
+                    <option value="guitar">Guitar</option>
+                    <option value="bass">Bass</option>
+                    <option value="drums">Drums</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="other">Other</option>
+                  </select> <br>
+
+
+      Who wants to play:     <select name="commitment" id="commitment">
+                              <option value="At a one time jam session">At a one time jam session</option>
+                              <option value="Every Few Months">Every Few Months</option>
+                              <option value="Once A Month">Once A Month</option>
+                              <option value="Weekly">Weekly</option>
+                              <option value="All The Time">All The Time</option>
+                             </select>
+
+      <br><br>
+
 
 
       <button>Search</button>
-
     </script>
 
 
@@ -201,6 +241,7 @@
         <script src="scripts/views/landing_view.js"></script>
         <script src="scripts/views/otherprofile_view.js"></script>
         <script src="scripts/views/add_view.js"></script>
+        <script src="scripts/views/singleJam_view.js"></script>
         <script src="scripts/views/search_view.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/main.js"></script>

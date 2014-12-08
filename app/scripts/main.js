@@ -9,18 +9,14 @@ Parse.initialize("WyPAizSEao3Qzn2Jq3RhIbEBbgNvqZdMZJegZG20", "yAvPrABaY6PJRcIT4D
   //fetch server-side posts
   App.people.fetch().done(function() {
 
-    App.router = new App.Routers.AppRouter();
+    App.jams.fetch().done(function() {
 
-    Parse.history.start();
+      App.router = new App.Routers.AppRouter();
 
-  });
+      Parse.history.start();
 
-  App.jams.fetch().done(function() {
-
-    App.router = new App.Routers.AppRouter();
-
-  });
-
+    });
+});
 
 
 

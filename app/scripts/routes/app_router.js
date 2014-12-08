@@ -8,9 +8,10 @@
       'user': 'userPage',
       'home': 'homePage',
       'landing': 'landingPage',
-      'otherProfile': 'otherProfile',
+      'otherProfile/:id': 'otherProfile',
       'addJam': 'addJam',
-      'search': 'search'
+      'search': 'search',
+      'singleJam/:id': 'singleJam'
     },
 
     userLogin: function() {
@@ -35,8 +36,11 @@
       new App.Views.Landing();
     },
 
-    otherProfile: function() {
-      new App.Views.OtherProfile();
+    otherProfile: function(id) {
+
+      var t = App.people.get(id);
+      new App.Views.OtherProfile({ person: t});
+
     },
 
     addJam: function() {
@@ -45,6 +49,11 @@
 
     search: function() {
       new App.Views.Search();
+    },
+
+    singleJam: function(id) {
+      var t = App.jams.get(id);
+      new App.Views.SingleJam({ jam: t});
     }
 
 

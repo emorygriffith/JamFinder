@@ -43,6 +43,7 @@
         location: $('#location').val(),
         members: $('#members').val(),
         date: $('#date').val(),
+        description: $('#description').val(),
         public: $('#public').val()
       });
 
