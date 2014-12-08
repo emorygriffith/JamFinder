@@ -121,7 +121,8 @@
   <li id="<%= objectId %>">
     <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
     Host: <%= host %> <br>
-    Location: <%= location %>
+    Location: <%= location %> <br>
+    Date: <%= date %>
     </li>
   </script>
 
@@ -131,6 +132,7 @@
       <h3 class="jumbo"><%= title %></h3><br>
       <span>Host: <%= host %> </span><br>
       <span>Location: <%= location %></span><br>
+      <span><%= date %></span><br>
       <span><%= description %></span>
     </div>
 
@@ -144,6 +146,18 @@
       <div id="<%= objectId %>" class="createjamform">
         <h3>Create a Jam</h3>
         <form id="createJam">
+          Style:
+          <select name="style" id="style">
+            <option value="folk">Folk</option>
+            <option value="blues">Blues</option>
+            <option value="jazz">Jazz</option>
+            <option value="rock">Rock</option>
+            <option value="alternative">Alternative</option>
+            <option value="metal">Metal</option>
+            <option value="hiphop">Hip Hop</option>
+          </select>
+          <br>
+
           <input id="title" type="text" placeholder="Title" /> <br>
           <input id="host" type="text" placeholder="Host" /> <br>
           <input id="location" type="text" placeholder="Location" /> <br>
@@ -164,9 +178,13 @@
     </script>
 
     <script type="text/template" id="otherProfile">
-      <li id="<%= objectId %>">
-        <h3><%= firstname %></h3>
-      </li>
+      <div id="<%= objectId %>">
+        <img class="userPic" src="<%= picture %>">
+        <h3><%= firstname %> <%= lastname %></h3>
+        <p>Instrument: <%= instrument %></p>
+        <p>Style: <%= style %></p>
+        <p>Likes To Play: <%= commitment %></p>
+      </div>
     </script>
 
     <script type="text/template" id="searchTemp">

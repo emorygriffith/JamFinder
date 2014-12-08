@@ -18,7 +18,8 @@ body {
   font-weight: 200;
   line-height: 30px;
   border-radius: 6px;
-  padding: 60px;
+  padding-left: 60px;
+  padding-right:60px;
 
   h1 {
     font-size: 60px;
@@ -41,4 +42,10 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 
+}
+
+.userPic{
+  height:200px;
+  width:200px;
+  border: solid;
 }

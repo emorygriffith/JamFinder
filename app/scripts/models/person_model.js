@@ -7,11 +7,13 @@
     idAttribute: 'objectId',
 
     defaults: {
-      name: '',
+      firstname: '',
+      lastname: '',
       location: '',
       instrument: '',
       style: '',
-      commitment: ''
+      commitment: '',
+      picture: ''
     },
 
     initialize: function(){

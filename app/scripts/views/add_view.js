@@ -40,6 +40,7 @@
       var j = new App.Models.Jam({
         title: $('#title').val(),
         host: $('#host').val(),
+        style: $('#style').val(),
         location: $('#location').val(),
         members: $('#members').val(),
         date: $('#date').val(),
