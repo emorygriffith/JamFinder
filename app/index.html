@@ -164,7 +164,6 @@
           <input id="title" type="text" placeholder="Title" /> <br>
           <input id="host" type="text" placeholder="Host" /> <br>
           <input id="location" type="text" placeholder="Location" /> <br>
-          <input id="members" type="text" placeholder="Members" /> <br>
           <input id="description" type="text" placeholder="Description" /> <br>
           <input id="date" type="date" placeholder="Date" /> <br>
           Public <input id="public" type="checkbox"/> <br>
@@ -190,7 +189,7 @@
       </div>
     </script>
 
-    <script type="text/template" id="searchTemp">
+    <script type="text/template" id="musicianSearchTemp">
       <h3> Find a musician!</h3>
       <form id="findMusician">
       Style:      <select name="style" id="style">
@@ -213,7 +212,7 @@
                   </select> <br>
 
 
-<!--       Who wants to play:     <select name="commitment" id="commitment">
+<!--   Who wants to play:     <select name="commitment" id="commitment">
                         <option value="At a one time jam session">At a one time jam session</option>
                         <option value="Every Few Months">Every Few Months</option>
                         <option value="Once A Month">Once A Month</option>
@@ -222,13 +221,36 @@
                        </select>
  -->
       <br><br>
-
-
-
       <button>Search</button>
       <br><br>
       <div id="results">Results: </div>
     </script>
+
+    <script type="text/template" id="jamSearchTemp">
+        <h3> Find a jam!</h3>
+        <form id="findJam">
+        Style:      <select name="style" id="style">
+                      <option value="folk">Folk</option>
+                      <option value="blues">Blues</option>
+                      <option value="jazz">Jazz</option>
+                      <option value="rock">Rock</option>
+                      <option value="alternative">Alternative</option>
+                      <option value="metal">Metal</option>
+                      <option value="hiphop">Hip Hop</option>
+                    </select>
+        <br>
+
+        <button>Search</button>
+        <br><br>
+        <div id="results">Results: </div>
+    </script>
+
+    <script type="text/template" id="searchLandingTemp">
+      <button id="jam">Find a Jam</button>
+      <button id="musician">Find a Musician</button>
+    </script>
+
+
 
 
 
@@ -239,6 +261,8 @@
     <script src="../bower_components/backbone/backbone.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
@@ -267,6 +291,7 @@
         <script src="scripts/views/singleJam_view.js"></script>
         <script src="scripts/views/search_view.js"></script>
         <script src="scripts/routes/app_router.js"></script>
+        <script src="scripts/soundcloud.js"></script>
         <script src="scripts/main.js"></script>
 
         <!-- endbuild -->

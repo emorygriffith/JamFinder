@@ -6,16 +6,23 @@
     className: 'allPeople',
 
     events: {
-      'submit #findMusician': 'findMusician'
+      'submit #findJam': 'findJam',
+      'submit #findMusician': 'findMusician',
+      'click #jam': 'renderJamSearchTemp',
+      'click #musician': 'renderMusicianSearchTemp',
+
     },
 
-    template: $('#searchTemp').html(),
+    template: $('#musicianSearchTemp').html(),
+    template2: $('#jamSearchTemp').html(),
+    template3: $('#searchLandingTemp').html(),
 
     initialize: function() {
 
 
 
       $('#bandMates').html(this.$el);
+
 
       this.render();
 
@@ -24,13 +31,33 @@
 
     render: function() {
 
-      this.$el.html(this.template);
+      this.$el.html(this.template3);
+
 
       var self = this;
 
       return this;
 
     },
+
+    renderJamSearchTemp: function(){
+      this.$el.html(this.template2);
+
+
+      var self = this;
+
+      return this;
+    },
+
+    renderMusicianSearchTemp: function(){
+      this.$el.html(this.template);
+
+
+      var self = this;
+
+      return this;
+    },
+
 
     findMusician: function(e) {
       e.preventDefault();
@@ -39,8 +66,6 @@
       query.equalTo("style", styleInput);
       query.find({
         success: function(results) {
-          console.log(results);
-          // var searchResults = [];
           var instruments = _.filter(results, function(x){
             return x.attributes.instrument === $('#instrument').val();
           });
@@ -56,7 +81,25 @@
         }
 
       });
-    }
+    },
+
+    findJam: function(e){
+      e.preventDefault();
+
+      var query = new Parse.Query(App.Models.Jam);
+      var styleInput = $('#style').val();
+      query.equalTo("style", styleInput);
+
+      query.find({
+         success: function(results) {
+           console.log(results);
+           return results;
+         }
+
+
+      });
+      
+    } //closes findJam
 
   });
 

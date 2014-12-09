@@ -9,10 +9,11 @@
     defaults: {
       title: '',
       host: '',
+      style: '',
       location: '',
-      members: '',
       public: true,
       date: '',
+      frequency: ''
     },
 
     initialize: function(){
