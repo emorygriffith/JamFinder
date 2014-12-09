@@ -25,19 +25,21 @@
 
 
     <div class="hero-unit">
-      <h1>Jam Finder</h1>
+      <div class=header>
+        <h1>Jam Finder</h1>
 
-      <div class="buttons">
-        <a href="#/home"><button>Home</button></a>
-        <a href="#/login"><button>Log In</button></a>
-        <a href="#/signup"><button>Sign Up</button></a>
-        <button id="logOut">Log Out</button>
-        <a href="#/user"><button>My Profile</button></a>
-        <a href="#/addJam"><button>Add Jam</button></a>
-        <a href="#/landing"><button>Landing Page</button></a>
-        <a href="#/otherProfile"><button>Other Profile View</button></a>
-        <a href="#/search"><button>Search</button></a>
-      </div>
+          <div class="buttons">
+            <a href="#/home"><button>Home</button></a>
+            <a href="#/login"><button>Log In</button></a>
+            <a href="#/signup"><button>Sign Up</button></a>
+            <button id="logOut">Log Out</button>
+            <a href="#/user"><button>My Profile</button></a>
+            <a href="#/addJam"><button>Add Jam</button></a>
+            <a href="#/landing"><button>Landing Page</button></a>
+            <a href="#/otherProfile"><button>Other Profile View</button></a>
+            <a href="#/search"><button>Search</button></a>
+          </div>
+      </div> <!-- close header -->
 
       <div id="bandMates"></div>
       <div id="separateDiv"></div>
@@ -99,6 +101,7 @@
 
     <script type="text/template" id="userTemp">
     <div id="<%= objectId %>">
+        <img class="userPic" src="<%= picture %>">
         <h3>Welcome <%= firstname %>!</h3>
         <p>Instrument: <%= instrument %></p>
         <p>Style: <%= style %></p>
@@ -210,19 +213,21 @@
                   </select> <br>
 
 
-      Who wants to play:     <select name="commitment" id="commitment">
-                              <option value="At a one time jam session">At a one time jam session</option>
-                              <option value="Every Few Months">Every Few Months</option>
-                              <option value="Once A Month">Once A Month</option>
-                              <option value="Weekly">Weekly</option>
-                              <option value="All The Time">All The Time</option>
-                             </select>
-
+<!--       Who wants to play:     <select name="commitment" id="commitment">
+                        <option value="At a one time jam session">At a one time jam session</option>
+                        <option value="Every Few Months">Every Few Months</option>
+                        <option value="Once A Month">Once A Month</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="All The Time">All The Time</option>
+                       </select>
+ -->
       <br><br>
 
 
 
       <button>Search</button>
+      <br><br>
+      <div id="results">Results: </div>
     </script>
 
 

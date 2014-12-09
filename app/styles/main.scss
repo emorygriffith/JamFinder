@@ -9,7 +9,10 @@ body {
   color: #333;
   background-image:URL('http://solesofmyboots.files.wordpress.com/2011/11/crowd1.jpg');
 
+
 }
+
+
 
 .hero-unit {
   margin: 50px auto 0 auto;
@@ -18,14 +21,30 @@ body {
   font-weight: 200;
   line-height: 30px;
   border-radius: 6px;
-  padding-left: 60px;
-  padding-right:60px;
 
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+
+  .header{
+    background-color:navy;
+    padding:10px;
+
+/*     .buttons{
+  float:right;
+
+} */
+
+    h1 {
+      font-size: 40px;
+      line-height: 1;
+      letter-spacing: -1px;
+      color:white;
+/*       display:inline-block;
+clear:both; */
+
+    }
+
   }
+
+
 }
 
 #map-canvas{

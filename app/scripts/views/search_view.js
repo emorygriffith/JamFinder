@@ -32,19 +32,27 @@
 
     },
 
-    findMusician: function() {
+    findMusician: function(e) {
+      e.preventDefault();
       var query = new Parse.Query(Parse.User);
       var styleInput = $('#style').val();
       query.equalTo("style", styleInput);
       query.find({
         success: function(results) {
           console.log(results);
-
+          // var searchResults = [];
           var instruments = _.filter(results, function(x){
             return x.attributes.instrument === $('#instrument').val();
           });
 
-          console.log(instruments);
+
+
+          _.each(instruments, function(x){
+            var userLink = '/#/otherProfile/'+x.id;
+
+            $("#results").append('<a href="' + userLink + '">' + x.attributes.firstname + '</a>');
+          });
+
         }
 
       });

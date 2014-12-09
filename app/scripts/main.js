@@ -84,6 +84,4 @@ App.loadMap = function(position) {
 
 
 
-
-
 }());
