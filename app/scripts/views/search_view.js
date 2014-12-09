@@ -61,6 +61,9 @@
 
     findMusician: function(e) {
       e.preventDefault();
+
+      $('#results').empty();
+
       var query = new Parse.Query(Parse.User);
       var styleInput = $('#style').val();
       query.equalTo("style", styleInput);
@@ -76,7 +79,7 @@
           _.each(instruments, function(x){
             var userLink = '/#/otherProfile/'+x.id;
 
-            $("#results").append('<a href="' + userLink + '">' + x.attributes.firstname + '</a>');
+            $("#results").append('<a href="' + userLink + '">' + '<img src=' + x.attributes.picture +' height=50px; />' + x.attributes.firstname + '</a>' + '<br>');
           });
 
         }
@@ -86,6 +89,8 @@
 
     findJam: function(e){
       e.preventDefault();
+
+      $('#results').empty();
 
       var query = new Parse.Query(App.Models.Jam);
 
@@ -100,7 +105,7 @@
                  _.each(jams, function(x){
                    console.log(x.attributes.title);
                    var jamLink = '/#/singleJam/'+x.id;
-                   $("#results").append('<a href="' + jamLink + '">' + x.attributes.title + '</a>');
+                   $("#results").append('<a href="' + jamLink + '">' + x.attributes.title + '</a>' + '<br>');
                  }); //closes each fx
 
                } //closes success fx
