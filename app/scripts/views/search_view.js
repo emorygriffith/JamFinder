@@ -66,6 +66,7 @@
       query.equalTo("style", styleInput);
       query.find({
         success: function(results) {
+
           var instruments = _.filter(results, function(x){
             return x.attributes.instrument === $('#instrument').val();
           });
@@ -87,21 +88,36 @@
       e.preventDefault();
 
       var query = new Parse.Query(App.Models.Jam);
+
       var styleInput = $('#style').val();
       query.equalTo("style", styleInput);
 
-      query.find({
-         success: function(results) {
-           console.log(results);
-           return results;
-         }
+            query.find({
+               success: function(results) {
+                 var jams = results;
+                 console.log(jams);
+
+                 _.each(jams, function(x){
+                   console.log(x.attributes.title);
+                   var jamLink = '/#/singleJam/'+x.id;
+                   $("#results").append('<a href="' + jamLink + '">' + x.attributes.title + '</a>');
+                 }); //closes each fx
+
+               } //closes success fx
 
 
-      });
-      
+            }); //closes query.find
+
+
+
+
+
+
+
+
     } //closes findJam
 
-  });
+  }); //closes App.Views.search
 
 
-}());
+}()); //closes iffy
