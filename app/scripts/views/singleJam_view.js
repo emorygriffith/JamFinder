@@ -16,6 +16,8 @@
 
       $('#bandMates').html(this.$el);
 
+      $('#separateDiv').css("display", "none");
+
 
 
 

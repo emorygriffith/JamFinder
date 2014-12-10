@@ -15,6 +15,8 @@
 
       $('#bandMates').html(this.$el);
 
+      $('#separateDiv').css("display", "none");
+
       this.$el.html(this.template);
 
       var self = this;
@@ -32,9 +34,6 @@
       return this;
 
     },
-
-
-
 
 
 

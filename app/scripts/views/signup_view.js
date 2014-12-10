@@ -51,6 +51,10 @@
 
       person.signUp();
 
+      App.router.navigate('home', {trigger: true});
+
+
+
     }
 
 

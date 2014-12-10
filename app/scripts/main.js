@@ -64,7 +64,7 @@ App.loadMap = function(position) {
     e.preventDefault();
     Parse.User.logOut();
     App.updateUser();
-    App.router.navigate('login', {trigger: true});
+    App.router.navigate('', {trigger: true});
   });
 
 

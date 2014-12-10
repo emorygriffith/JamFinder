@@ -15,6 +15,8 @@
 
       $('#bandMates').html(this.$el);
 
+      $('#separateDiv').css("display", "none");
+
       this.render();
 
 
@@ -39,7 +41,7 @@
       Parse.User.logIn(username, password, {
         success: function (user) {
           App.updateUser();
-          App.router.navigate('#/user', {trigger: true});
+          App.router.navigate('#/home', {trigger: true});
           console.log(username + ' is logged in');
           // console.log(user);
         },

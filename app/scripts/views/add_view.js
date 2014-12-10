@@ -17,6 +17,7 @@
 
       $('#bandMates').html(this.$el);
 
+
       this.render();
 
 
@@ -56,6 +57,8 @@
           App.jams.add(j);
         }
       });
+
+      App.router.navigate('home', {trigger: true});
 
     }
 

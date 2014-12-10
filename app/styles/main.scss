@@ -10,48 +10,111 @@ body {
   background-image:URL('http://solesofmyboots.files.wordpress.com/2011/11/crowd1.jpg');
 
 
+
 }
 
-
-
 .hero-unit {
-  margin: 50px auto 0 auto;
+  margin: 20px auto 0 auto;
   width: 1400px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
   border-radius: 6px;
+  @include outer-container;
+  $mobile: new-breakpoint(max-width 500px 4);
 
 
   .header{
     background-color:navy;
     padding:10px;
 
-/*     .buttons{
-  float:right;
-
-} */
-
     h1 {
       font-size: 40px;
       line-height: 1;
       letter-spacing: -1px;
       color:white;
-/*       display:inline-block;
-clear:both; */
+    }
+
+  }
+
+.landcontainer{
+
+    .landtext{
+      font-size:60px;
+      color:navy;
+      display:inline;
+      float:left;
+    }
+
+    .musicnote{
+      height:80px;
+      float:left;
+    }
+
+    #login{
+      display:inline-block;
+      float:left;
+      clear:both;
+    }
+    #signup{
+      display:inline-block;
+      float:left;
 
     }
 
   }
 
 
+
+  .usersnearyou{
+    color:blue;
+    display:inline;
+    float:left;
+  }
+
+  .jamsnearyou{
+    color:red;
+    display:inline;
+    float:right;
+  }
+
+
+  #map-canvas{
+    clear:both;
+    @include span-columns(6);
+    @include media($mobile) {
+      @include span-columns(3);
+    }
+    height: 500px;
+    width:500px;
+    display: block;
+    float:left;
+  }
+
+  #separateDiv{
+    margin-left:20px;
+    float:right;
+    border:solid;
+    border-color:gray;
+    border-radius:8px;
+    height:500px;
+    overflow:scroll;
+    @include span-columns(6);
+    @include media($mobile) {
+      @include span-columns(3);
+    }
+
+    li{
+      margin-left:10%;
+    }
+  }
 }
 
-#map-canvas{
-  height: 500px;
-  width:500px;
-
+.hide{
+  display:none;
 }
+
+
 
 .createjamform{
   background-color:white;
@@ -67,4 +130,10 @@ clear:both; */
   height:200px;
   width:200px;
   border: solid;
+}
+
+#submitLocation{
+  float:left;
+  clear:both;
+  margin:25px;
 }

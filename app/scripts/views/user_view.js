@@ -14,6 +14,9 @@
     initialize: function(options) {
       this.options = options;
 
+      $('#separateDiv').css("display", "none");
+
+
       $('#bandMates').html(this.$el);
 
       this.render();

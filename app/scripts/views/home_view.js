@@ -19,6 +19,8 @@
       this.collection.on('sync', this.jamQuery, this);
 
 
+      $('#separateDiv').css("display", "");
+      $('#myprofile').removeClass("hide");
 
 
       this.jamQuery();
@@ -45,7 +47,7 @@
 
           _.each(results, function(p) {
               console.log(p.attributes.title);
-              self.$el.append(self.jamsTemplate(p.toJSON()));
+              $('#separateDiv').append(self.jamsTemplate(p.toJSON()));
 
           });
 

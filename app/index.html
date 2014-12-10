@@ -25,21 +25,24 @@
 
 
     <div class="hero-unit">
-      <div class=header>
-        <h1>Jam Finder</h1>
+
+        <div class=header>
+          <h1>Jam Finder</h1>
+
+
 
           <div class="buttons">
-            <a href="#/home"><button>Home</button></a>
-            <a href="#/login"><button>Log In</button></a>
-            <a href="#/signup"><button>Sign Up</button></a>
-            <button id="logOut">Log Out</button>
-            <a href="#/user"><button>My Profile</button></a>
-            <a href="#/addJam"><button>Add Jam</button></a>
-            <a href="#/landing"><button>Landing Page</button></a>
-            <a href="#/otherProfile"><button>Other Profile View</button></a>
-            <a href="#/search"><button>Search</button></a>
-          </div>
-      </div> <!-- close header -->
+            <a href="#/home"><button class="hide" id="home">Home</button></a>
+            <a href="#/login"><button class="hide" id="login">Log In</button></a>
+            <a href="#/signup"><button class="hide" id="signup">Sign Up</button></a>
+            <a href="#/login"><button class="hide" id="logout">Log Out</button></a>
+            <a href="#/user"><button class="hide" id="myprofile">My Profile</button></a>
+            <a href="#/addJam"><button class="hide" id="addjam">Add Jam</button></a>
+            <!--             <a href="#/landing"><button class="landing">Landing Page</button></a>
+          --><!--            <a href="#/otherProfile"><button>Other Profile View</button></a>
+        --> <a href="#/search"><button class="hide" id="search">Search</button></a>
+            </div>
+        </div> <!-- close header -->
 
       <div id="bandMates"></div>
       <div id="separateDiv"></div>
@@ -48,8 +51,11 @@
 
     <script type="text/template" id="loginForm">
       <form id="logIn">
+        <h2>Log In</h2>
         <input id="username" type="text" placeholder="Enter Username" />
+        <br>
         <input id="password" type="password" placeholder="Enter Password" />
+        <br>
         <button>Log In</button>
       </form>
     </script>
@@ -95,6 +101,7 @@
 
         <br><br>
         <button>Sign Up</button>
+
       </form>
     </script>
 
@@ -108,26 +115,30 @@
         <p>Commitment Level: <%= commitment %></p>
         <div id="map-canvas"></div>
         <br>
+        <br>
         <button id="submitLocation">Use this Location</button>
+
     </div>
 
 
     </script>
 
     <script type="text/template" id="homeTemp">
-      Here Are Other Users Near You:
+      <h3 class="usersnearyou">Near You:</h3>
       <div id="map-canvas"></div>
+
+
     </script>
 
-  <script type="text/template" id="jamsTemplate">
+    <script type="text/template" id="jamsTemplate">
 
-  <li id="<%= objectId %>">
-    <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
-    Host: <%= host %> <br>
-    Location: <%= location %> <br>
-    Date: <%= date %>
-    </li>
-  </script>
+      <li class="jam" id="<%= objectId %>">
+        <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
+        Host: <%= host %> <br>
+        Location: <%= location %> <br>
+        Date: <%= date %>
+      </li>
+    </script>
 
 
   <script type="text/template" id="singlejamTemp">
@@ -174,9 +185,17 @@
 
 
     <script type="text/template" id="landingTemp">
-      <li>
-        <h3>This is the landing page!</h3>
-      </li>
+      <div class="landcontainer">
+        <div class="inner">
+          <h1 class="landtext">Welcome to JamFinder!</h1>
+          <img class="musicnote" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Musical_note_nicu_bucule_01.svg/2000px-Musical_note_nicu_bucule_01.svg.png"/>
+          <div class="buttons">
+            <a href="#/login"><button id="login">Log In</button></a>
+            <a href="#/signup"><button id="signup">Sign Up</button></a>
+          </div>
+        </div>
+
+      </div>
     </script>
 
     <script type="text/template" id="otherProfile">
@@ -249,6 +268,10 @@
       <button id="jam">Find a Jam</button>
       <button id="musician">Find a Musician</button>
     </script>
+
+    
+
+
 
 
 
