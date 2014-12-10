@@ -46,6 +46,9 @@
 
       <div id="bandMates"></div>
       <div id="separateDiv"></div>
+      <div id="disqus_thread"></div>
+
+
     </div>
 
 
@@ -117,6 +120,7 @@
         <br>
         <br>
         <button id="submitLocation">Use this Location</button>
+
 
     </div>
 
@@ -205,7 +209,12 @@
         <p>Instrument: <%= instrument %></p>
         <p>Style: <%= style %></p>
         <p>Likes To Play: <%= commitment %></p>
+        <!-- <div id="disqus_thread"></div> -->
+
       </div>
+
+
+
     </script>
 
     <script type="text/template" id="musicianSearchTemp">
@@ -269,7 +278,20 @@
       <button id="musician">Find a Musician</button>
     </script>
 
-    
+
+
+
+      <script type="text/javascript" id="disqus">
+      var disqus_shortname = 'jamfinder'; // required: replace example with your forum shortname
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+
+
+      </script>
+
 
 
 
@@ -319,4 +341,5 @@
 
         <!-- endbuild -->
 </body>
+
 </html>

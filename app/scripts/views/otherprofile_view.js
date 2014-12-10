@@ -8,7 +8,8 @@
     events: {},
 
     template: _.template($('#otherProfile').html()),
-    template2: $('#disqus').html(),
+    // template2: $('#disqus').html(),
+
 
     initialize: function(options) {
       console.log(options);
@@ -33,8 +34,8 @@
     render: function() {
 
       this.$el.append(this.template(this.options.person.toJSON()));
+      // $('#disqus_thread').html("this is where the disqus template should go");
 
-      
 
 
       var self = this;
