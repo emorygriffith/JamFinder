@@ -15,6 +15,7 @@
 
       $('#separateDiv').css("display", "none");
       $('#home').removeClass("hide");
+      
 
       this.options= options;
       $('#bandMates').html(this.$el);
@@ -34,7 +35,7 @@
 
       this.$el.append(this.template(this.options.person.toJSON()));
 
-      
+
 
 
       var self = this;
