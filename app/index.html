@@ -136,6 +136,7 @@
     <script type="text/template" id="jamsTemplate">
 
       <li class="jam" id="<%= objectId %>">
+        <img class="jampic" src="<%= picture %>" />
         <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
         Host: <%= host %> <br>
         Location: <%= location %> <br>
@@ -146,6 +147,7 @@
 
   <script type="text/template" id="singlejamTemp">
     <div id="<%= objectId %>">
+    <img class="jampicbig" src="<%= picture %>" />
       <h3 class="jumbo"><%= title %></h3><br>
       <span>Host: <%= host %> </span><br>
       <span>Location: <%= location %></span><br>

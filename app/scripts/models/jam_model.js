@@ -13,7 +13,8 @@
       location: '',
       public: true,
       date: '',
-      frequency: ''
+      frequency: '',
+      picture: '',
     },
 
     initialize: function(){
