@@ -29,7 +29,7 @@
     <div class="hero-unit">
 
         <div class=header>
-          <a href=""><h1>JamFinder</h1></a>
+          <a href="#/home"><h1>JamFinder</h1></a>
           <img class="headermusicnote" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Musical_note_nicu_bucule_01.svg/2000px-Musical_note_nicu_bucule_01.svg.png" height="50px"/>
 
 
@@ -157,11 +157,11 @@
     <div id="<%= objectId %>">
     <img class="jampicbig" src="<%= picture %>" />
       <h3 class="jumbo"><%= title %></h3><br>
-      <span>Host: <%= host %> </span><br>
-      <span>Location: <%= location %></span><br>
+      <span class="jamtext1">Host: <%= host %> </span><br>
+      <span class="jamtext1">Location: <%= location %></span><br>
 
-      <span><%= moment(date).format("MMM Do YY") %></span><br>
-      <span><%= description %></span>
+      <span class="jamtext1"><%= moment(date).format("MMM Do YY") %></span><br>
+      <span class="jamtext1"><%= description %></span>
 
     </div>
     <button class="contact">Contact The Host</button>

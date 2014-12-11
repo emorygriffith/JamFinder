@@ -350,11 +350,19 @@ body {
 .contact{
   border-radius:8px;
   clear:both;
-  float:right;
-  margin-right:230px;
+  float:left;
+
   margin-top:50px;
+
 }
 
 .jumbo{
   font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.jamtext1{
+  font-family: 'Roboto', sans-serif;
+  font-size:25px;
+  font-weight:bold;
 }
