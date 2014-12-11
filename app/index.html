@@ -140,7 +140,7 @@
         <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
         Host: <%= host %> <br>
         Location: <%= location %> <br>
-        Date: <%= date %>
+        Date: <%= moment(date).format("MMM Do YY") %>
       </li>
     </script>
 
@@ -151,8 +151,10 @@
       <h3 class="jumbo"><%= title %></h3><br>
       <span>Host: <%= host %> </span><br>
       <span>Location: <%= location %></span><br>
-      <span><%= date %></span><br>
+
+      <span><%= moment(date).format("MMM Do YY") %></span><br>
       <span><%= description %></span>
+
     </div>
 
 
@@ -298,6 +300,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
     <script src="//www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+
+    <script src="../bower_components/moment/moment.js"></script>
 
     <script type="text/javascript">
       window.App = {};
