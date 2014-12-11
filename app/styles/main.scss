@@ -178,18 +178,29 @@ body {
   }
 
 .personinfo{
-  border:solid;
   margin-top:50px;
+  display:inline-block;
 }
 .persontext{
-  border:solid;
   display:inline-block;
+  margin-left:25px;
+
+
+  h3{
+    font-size:45px;
+    padding:none;
+  }
+  p{
+    font-size:25px;
+  }
+
 }
 
 .userPic{
+  float:left;
   height:300px;
   width:300px;
-  border: solid;
+
 }
 
 
@@ -283,14 +294,39 @@ body {
   margin:25px;
 }
 
+
+
+
+
+#soundcloud{
+  margin-top:30px;
+  clear:both;
+
+}
+
+.social{
+  float:right;
+  margin-top:70px;
+  margin-right:80px;
+
+
+
 .soundcloud{
-  height:75px;
-  width: 150px;
-  margin-left:40px;
-  margin-top:25px;
+
+  height:70px;
+  width:185px;
+  margin-top:20px;
+  margin-left:10px;
 }
 
 
+.facebook{
+  height:70px;
+  margin-left:10px;
+  margin-top:30px;
+
+}
+}
 
 .jam{
 
