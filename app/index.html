@@ -115,13 +115,17 @@
 
     <script type="text/template" id="userTemp">
     <div id="<%= objectId %>">
-        <img class="userPic" src="<%= picture %>">
-        <h3>Welcome <%= firstname %>!</h3>
-        <p>Instrument: <%= instrument %></p>
-        <p>Style: <%= style %></p>
-        <p>Commitment Level: <%= commitment %></p>
-        <div id="map-canvas"></div>
-        <br>
+
+          <img class="userPic" src="<%= picture %>">
+          <div class="userTempinfo">
+            <h3>Welcome <%= firstname %>!</h3>
+            <p>Instrument: <%= instrument %></p>
+            <p>Style: <%= style %></p>
+            <p>Commitment Level: <%= commitment %></p>
+
+        </div>
+        <div class="mapuser" id="map-canvas"></div>
+          <br>
         <br>
         <button id="submitLocation">Use this Location</button>
 
@@ -161,7 +165,7 @@
       <span class="jamtext1">Location: <%= location %></span><br>
 
       <span class="jamtext1"><%= moment(date).format("MMM Do YY") %></span><br>
-      <span class="jamtext1"><%= description %></span>
+      <span><%= description %></span>
 
     </div>
     <button class="contact">Contact The Host</button>
@@ -176,8 +180,8 @@
       <div id="<%= objectId %>" class="createjamform">
         <h3>Create a Jam</h3>
         <form id="createJam">
-          Style:
-          <select name="style" id="style">
+          <p>Style:
+          <select name="style" id="style"></p>
             <option value="folk">Folk</option>
             <option value="blues">Blues</option>
             <option value="jazz">Jazz</option>
@@ -193,7 +197,7 @@
           <input id="location" type="text" placeholder="Location" /> <br>
           <input id="description" type="text" placeholder="Description" /> <br>
           <input id="date" type="date" placeholder="Date" /> <br>
-          Public <input id="public" type="checkbox"/> <br>
+          <div class="public">Public <input type="checkbox"/></div> <br>
           <button>Add Jam</button>
         </form>
       </div>

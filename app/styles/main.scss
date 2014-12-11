@@ -13,7 +13,8 @@ body {
 
 .buttons{
   button{
-  color:HSLA(33, 100%, 37%, 1);
+  background-color:HSLA(33, 100%, 45%, 1);
+  color:white;
   border-radius:8px;
   float:right;
   margin-right:8px;
@@ -278,12 +279,32 @@ body {
 
 
 .createjamform{
+  h3{
+    font-size:55px;
+    font-family: 'Roboto', sans-serif;
+  }
+  p{
+    font-size:25px;
+    font-family: 'Roboto', sans-serif;
+  }
+  input{
+    margin-top:9px;
+    border-radius:8px;
+  }
+  #public{
+    margin-top:5px;
+  }
+
   background-color:white;
-  width: 35%;
+  width: 45%;
   border-radius: 8px;
   opacity: .9;
   padding-left: 15px;
   padding-right: 15px;
+  button{
+    border-radius:8px;
+    background-color:HSLA(33, 100%, 45%, 1);
+  }
 
 }
 
@@ -351,7 +372,8 @@ body {
   border-radius:8px;
   clear:both;
   float:left;
-
+  background-color:HSLA(33, 100%, 45%, 1);
+  color:white;
   margin-top:50px;
 
 }
@@ -365,4 +387,26 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size:25px;
   font-weight:bold;
+}
+
+.userTempinfo{
+    display:inline-block;
+    margin-left:25px;
+
+
+
+  h3{
+
+    font-size:45px;
+    padding:none;
+  }
+  p{
+    margin-left:25px;
+    font-size:25px;
+  }
+}
+
+.mapuser{
+
+  margin-top:50px;
 }
