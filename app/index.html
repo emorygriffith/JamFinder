@@ -11,6 +11,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -55,12 +56,14 @@
 
     <script type="text/template" id="loginForm">
       <form id="logIn">
-        <h2>Log In</h2>
-        <input id="username" type="text" placeholder="Enter Username" />
-        <br>
-        <input id="password" type="password" placeholder="Enter Password" />
-        <br>
-        <button>Log In</button>
+        <div class="loginbox">
+          <h2 class="logintext">Log In</h2>
+          <input id="username" type="text" placeholder="Enter Username" />
+          <br>
+          <input id="password" type="password" placeholder="Enter Password" />
+          <br>
+          <button>Log In</button>
+        </div>
       </form>
     </script>
 
@@ -128,7 +131,9 @@
     </script>
 
     <script type="text/template" id="homeTemp">
-      <h3 class="usersnearyou">Near You:</h3>
+      <span class="usersnearyou">Musician Near You:</span>
+      <span class="jamsnearyou">Jam Sessions Near You:</span>
+
       <div id="map-canvas"></div>
 
 
@@ -138,10 +143,10 @@
 
       <li class="jam" id="<%= objectId %>">
         <img class="jampic" src="<%= picture %>" />
-        <a href="#/singleJam/<%= objectId %>"><%= title %></a> <br>
-        Host: <%= host %> <br>
-        Location: <%= location %> <br>
-        Date: <%= moment(date).format("MMM Do YY") %>
+        <span class="jamtitle"><a href="#/singleJam/<%= objectId %>"><%= title %></a></span> <br>
+        <span>Host: <%= host %></span> <br>
+        <span>Location: <%= location %> </span><br>
+        <span>Date: <%= moment(date).format("MMM Do YY") %></span>
       </li>
     </script>
 
@@ -195,9 +200,10 @@
     <script type="text/template" id="landingTemp">
       <div class="landcontainer">
         <div class="inner">
-          <h1 class="landtext">Welcome to JamFinder!</h1>
+          <h1 class="landtext">JamFinder</h1>
           <img class="musicnote" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Musical_note_nicu_bucule_01.svg/2000px-Musical_note_nicu_bucule_01.svg.png"/>
-          <div class="buttons">
+          <h3 class="subhead">Stop searching. Start jamming.</h3>
+          <div class="landbuttons">
             <a href="#/login"><button id="login">Log In</button></a>
             <a href="#/signup"><button id="signup">Sign Up</button></a>
           </div>

@@ -9,15 +9,19 @@ body {
   color: #333;
   background-image:URL('http://solesofmyboots.files.wordpress.com/2011/11/crowd1.jpg');
 
-
-
 }
 
 .buttons{
   button{
-  color:HSLA(240, 100%, 25%, 1);
+  color:HSLA(33, 100%, 37%, 1);
+  border-radius:8px;
+  float:right;
+  margin-right:8px;
+  margin-top:8px;
   }
 }
+
+
 
 .hero-unit {
   margin: 20px auto 0 auto;
@@ -31,8 +35,8 @@ body {
 
 
   .header{
-    background-color:HSLA(0, 0%, 50%, .3);
-
+    border-bottom:solid;
+    border-radius:5px;
     padding:10px;
     clear:both;
     height:90px;
@@ -46,7 +50,7 @@ body {
       font-size: 55px;
       line-height: 1;
       letter-spacing: -1px;
-      color:navy;
+      color:HSLA(33, 100%, 45%, 1);
       float:left;
       font-family: 'Lobster', cursive;
     }
@@ -62,50 +66,115 @@ body {
 
     .landtext{
       margin-top:150px;
-      font-size:60px;
-      color:navy;
+      font-size:100px;
+      color:HSLA(33, 100%, 45%, 1);
       display:inline;
       float:left;
       font-family: 'Lobster', cursive;
     }
 
+    .subhead{
+      color:HSLA(33, 100%, 37%, 1);
+      clear:both;
+      font-size:30px;
+      margin-top:15px;
+      margin-left:10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
     .musicnote{
       height:80px;
       float:left;
+      margin-top:120px;
+      margin-left:5px;
     }
 
-    #login{
-      display:inline-block;
-      float:left;
-      clear:both;
-    }
-    #signup{
-      display:inline-block;
-      float:left;
+    .landbuttons{
 
+
+      #login{
+        display:inline-block;
+        float:left;
+        clear:both;
+        height:50px;
+        width:150px;
+        border-radius:8px;
+        color:HSLA(33, 100%, 37%, 1);
+      }
+      #signup{
+
+        display:inline-block;
+        float:left;
+        height:50px;
+        width:150px;
+        margin-left:25px;
+        border-radius:8px;
+        color:HSLA(33, 100%, 37%, 1);
+      }
     }
+
+  }
+
+.loginbox{
+/*   background-color:HSLA(240, 100%, 25%, .4);
+ */  margin:25px;
+/*   border:solid; */
+  border-color:HSLA(33, 100%, 37%, 1);
+  border-radius:10px;
+  display:inline-block;
+  padding:45px;
+
+  .logintext{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #username{
+    width:400px;
+    height:40px;
+    border-radius:8px;
+  }
+
+  #password{
+    margin-top:15px;
+    width:400px;
+    height:40px;
+    border-radius:8px;
+  }
+
+  button{
+    border-radius:8px;
+    margin-top:15px;
+    width:100px;
+    color:HSLA(33, 100%, 37%, 1);
+  }
+
 
   }
 
 
 
   .usersnearyou{
-    color:HSLA(240, 100%, 25%, 1);
+    color:HSLA(33, 100%, 37%, 1);
     display:inline;
     float:left;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    font-weight:bold;
+    margin-bottom:9px;
   }
 
   .jamsnearyou{
-    color:red;
+    color:HSLA(33, 100%, 37%, 1);;
     display:inline;
-    float:right;
+    float:left;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    font-weight:bold;
+    margin-left:320px;
+    margin-bottom:9px;
   }
 
-  .jampic{
-    height:100px;
-    width:100px;
-    float:left;
-  }
+
 
   .jampicbig{
     height:25%;
@@ -116,13 +185,16 @@ body {
 
 
   #map-canvas{
+    border:solid;
+    border-radius:8px;
+    border-color:gray;
     clear:both;
     @include span-columns(6);
     @include media($mobile) {
       @include span-columns(3);
     }
     height: 500px;
-    width:500px;
+    width:560px;
     display: block;
     float:left;
   }
@@ -141,7 +213,7 @@ body {
     }
 
     li{
-      font-color:HSLA(240, 100%, 25%, 1);
+      font-color:HSLA(33, 100%, 37%, 1);
       margin-left:10%;
       list-style-type:none;
     }
@@ -181,4 +253,20 @@ body {
   width: 150px;
   margin-left:40px;
   margin-top:25px;
+}
+
+.jam{
+
+  padding:5px;
+  .jamtitle{
+    font-size:20px;
+  }
+
+  .jampic{
+    height:115px;
+    width:115px;
+    float:left;
+    padding:5px;
+  }
+
 }
