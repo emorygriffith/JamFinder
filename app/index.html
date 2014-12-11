@@ -29,7 +29,7 @@
     <div class="hero-unit">
 
         <div class=header>
-          <h1>JamFinder</h1>
+          <a href=""><h1>JamFinder</h1></a>
           <img class="headermusicnote" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Musical_note_nicu_bucule_01.svg/2000px-Musical_note_nicu_bucule_01.svg.png" height="50px"/>
 
 
@@ -131,10 +131,12 @@
     </script>
 
     <script type="text/template" id="homeTemp">
-      <span class="usersnearyou">Musician Near You:</span>
+      <span class="usersnearyou">Musicians Near You:</span>
       <span class="jamsnearyou">Jam Sessions Near You:</span>
 
-      <div id="map-canvas"></div>
+      <div id="map-canvas">
+        <div class="bar"></div>
+      </div>
 
 
     </script>
@@ -143,10 +145,10 @@
 
       <li class="jam" id="<%= objectId %>">
         <img class="jampic" src="<%= picture %>" />
-        <span class="jamtitle"><a href="#/singleJam/<%= objectId %>"><%= title %></a></span> <br>
-        <span>Host: <%= host %></span> <br>
-        <span>Location: <%= location %> </span><br>
-        <span>Date: <%= moment(date).format("MMM Do YY") %></span>
+        <a href="#/singleJam/<%= objectId %>"><span class="jamtitle"><%= title %></span></a> <br>
+        <span><strong>Host:</strong> <%= host %></span> <br>
+        <span><strong>Location:</strong> <%= location %> </span><br>
+        <span><strong>Date:</strong> <%= moment(date).format("MMM Do YY") %></span>
       </li>
     </script>
 
@@ -162,6 +164,7 @@
       <span><%= description %></span>
 
     </div>
+    <button class="contact">Contact The Host</button>
 
 
   </script>
@@ -213,12 +216,14 @@
     </script>
 
     <script type="text/template" id="otherProfile">
-      <div id="<%= objectId %>">
+      <div class="personinfo" id="<%= objectId %>">
         <img class="userPic" src="<%= picture %>">
-        <h3><%= firstname %> <%= lastname %></h3>
-        <p>Instrument: <%= instrument %></p>
-        <p>Style: <%= style %></p>
-        <p>Likes To Play: <%= commitment %></p>
+          <div class="persontext">
+            <h3><%= firstname %> <%= lastname %></h3>
+            <p>Instrument: <%= instrument %></p>
+            <p>Style: <%= style %></p>
+            <p>Likes To Play: <%= commitment %></p>
+          </div>
       </div>
       <div id="soundcloud">
         <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180882050&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>

@@ -21,7 +21,33 @@ body {
   }
 }
 
+.bar {
+  width: 50%;
+  margin-top:170px;
+  margin-left:140px;
+  height: 30px;
+  border: 1px solid #2980b9;
+  border-radius: 3px;
+  background-image:
+  repeating-linear-gradient(
+  -45deg,
+  #2980b9,
+  #2980b9 11px,
+  #eee 10px,
+  #eee 20px /* determines size */
+  );
+  background-size: 28px 28px;
+  animation: move .5s linear infinite;
+}
 
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
+}
 
 .hero-unit {
   margin: 20px auto 0 auto;
@@ -151,6 +177,20 @@ body {
 
   }
 
+.personinfo{
+  border:solid;
+  margin-top:50px;
+}
+.persontext{
+  border:solid;
+  display:inline-block;
+}
+
+.userPic{
+  height:300px;
+  width:300px;
+  border: solid;
+}
 
 
   .usersnearyou{
@@ -174,14 +214,14 @@ body {
     margin-bottom:9px;
   }
 
-
-
   .jampicbig{
     height:25%;
     width:25%;
     float:left;
     margin-right: 25px;
   }
+
+
 
 
   #map-canvas{
@@ -236,11 +276,6 @@ body {
 
 }
 
-.userPic{
-  height:200px;
-  width:200px;
-  border: solid;
-}
 
 #submitLocation{
   float:left;
@@ -255,18 +290,35 @@ body {
   margin-top:25px;
 }
 
+
+
 .jam{
 
   padding:5px;
   .jamtitle{
     font-size:20px;
   }
+  .jamtitle{
+    color:HSLA(33, 100%, 37%, 1);
+  }
 
   .jampic{
-    height:115px;
-    width:115px;
+    height:125px;
+    width:125px;
     float:left;
     padding:5px;
   }
 
+}
+
+.contact{
+  border-radius:8px;
+  clear:both;
+  float:right;
+  margin-right:230px;
+  margin-top:50px;
+}
+
+.jumbo{
+  font-size: 40px;
 }
