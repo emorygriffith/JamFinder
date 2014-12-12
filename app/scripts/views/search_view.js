@@ -8,8 +8,8 @@
     events: {
       'submit #findJam': 'findJam',
       'submit #findMusician': 'findMusician',
-      'click #jam': 'renderJamSearchTemp',
-      'click #musician': 'renderMusicianSearchTemp',
+      'click #jamButton': 'renderJamSearchTemp',
+      'click #musicianButton': 'renderMusicianSearchTemp',
 
     },
 

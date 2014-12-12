@@ -306,6 +306,7 @@ body {
     background-color:HSLA(33, 100%, 45%, 1);
   }
 
+
 }
 
 
@@ -409,4 +410,46 @@ body {
 .mapuser{
 
   margin-top:50px;
+}
+
+#jamButton{
+  margin-left:60px;
+  font-size: 40px;
+  height: 300px;
+  width: 300px;
+  background-color:HSLA(33, 100%, 45%, 1);
+  border-radius:8px;
+}
+
+#musicianButton{
+  font-size: 40px;
+  height: 300px;
+  width: 300px;
+  background-color:HSLA(33, 100%, 45%, 1);
+  border-radius:8px;
+}
+
+.looking{
+  margin-left:60px;
+  font-size:40px;
+}
+
+
+
+.jamssearchh3{
+    font-family: 'Roboto', sans-serif;
+    font-size:45px;
+    font-weight:bold;
+}
+
+.jamssearchp{
+  font-family: 'Roboto', sans-serif;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.searchbutton{
+  border-radius:8px;
+  margin-top:9px;
+  background-color:HSLA(33, 100%, 45%, 1);
 }

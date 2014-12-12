@@ -231,9 +231,9 @@
        </div>
 
        <div class="social">
-         <img class="facebook" src="http://static.squarespace.com/static/51001ae8e4b054dfaf045658/t/5272d4a7e4b0804eedc13665/1383257256538/facebookButton.jpg">
+         <a href="https://www.facebook.com/kevinmarblemusic"><img class="facebook" src="http://static.squarespace.com/static/51001ae8e4b054dfaf045658/t/5272d4a7e4b0804eedc13665/1383257256538/facebookButton.jpg"></a>
          <br>
-         <img class="soundcloud" src="http://darksoul.fr/wp-content/uploads/2013/01/SoundCloud.png" alt="">
+         <a href="https://soundcloud.com/emoryg"><img class="soundcloud" src="http://darksoul.fr/wp-content/uploads/2013/01/SoundCloud.png" alt=""></a>
       </div>
 
       <div id="soundcloud">
@@ -279,9 +279,9 @@
     </script>
 
     <script type="text/template" id="jamSearchTemp">
-        <h3> Find a jam!</h3>
+        <h3 class="jamssearchh3"> Find a jam!</h3>
         <form id="findJam">
-        Style:      <select name="style" id="style">
+        <span class="jamssearchp">Style:</span>    <select name="style" id="style">
                       <option value="folk">Folk</option>
                       <option value="blues">Blues</option>
                       <option value="jazz">Jazz</option>
@@ -292,14 +292,15 @@
                     </select>
         <br>
 
-        <button>Search</button>
+        <button class="searchbutton">Search</button>
         <br><br>
         <div id="results">Results: <br> </div>
     </script>
 
     <script type="text/template" id="searchLandingTemp">
-      <button id="jam">Find a Jam</button>
-      <button id="musician">Find a Musician</button>
+      <p class="looking">I'm looking for a:</p>
+      <button id="jamButton">Jam Session</button>
+      <button id="musicianButton">Musician</button>
     </script>
 
 
