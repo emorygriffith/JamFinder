@@ -79,7 +79,7 @@
           _.each(instruments, function(x){
             var userLink = '/#/otherProfile/'+x.id;
 
-            $("#results").append('<a href="' + userLink + '">' + '<img src=' + x.attributes.picture +' height=50px; />' + x.attributes.firstname + '</a>' + '<br>');
+            $("#results").append('<a href="' + userLink + '">' + '<img src=' + x.attributes.picture +' height=200px; />' + x.attributes.firstname + '</a>' + '<br>');
           });
 
         }
